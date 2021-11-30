@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link  rel="stylesheet" href="createcardstyles.css">
+    <title>Create your DevCard</title>
+  </head>
+  <body>
+    <main>
+      <div>
+        <img class="topimg" src="laptop-g0af605d9a_640.png">
+      </div>
+      <div>
+        <h1>
+          Create your DevCard
+        </h1>
+      </div>
+      <div>
+        <form action="/cardcreated" method="post" id="cardform">
+          <ul>
+            <li>
+              <input required class="ctr" type="text" id="name" name="fullName" placeholder="Your full name">
+            </li>
+            <li>
+              <textarea name="aboutMe" placeholder="About you"></textarea>
+            </li>
+            <li id="tech">
+              <p>
+                Technologies you know:
+              </p>
+              <div class="col">
+                <div>
+                  <input type="checkbox" id="html" name="knownTechnologies" value='HTML'>
+                  <label class="chk" for="html">HTML</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="js" name="knownTechnologies" value="JS">
+                  <label class="chk" for="js">JS</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="react" name="knownTechnologies" value="React">
+                  <label class="chk" for="react">React</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="css" name="knownTechnologies" value="CSS">
+                  <label class="chk" for="css">CSS</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="git" name="knownTechnologies" value="Git">
+                  <label class="chk" for="git">Git</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="node" name="knownTechnologies" value="Node.js">
+                  <label class="chk" for="node">Node.js</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="node" name="knownTechnologies" value="Sass">
+                  <label class="chk" for="node">Sass</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="node" name="knownTechnologies" value="NPM">
+                  <label class="chk" for="node">NPM</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="node" name="knownTechnologies" value="PHP">
+                  <label class="chk" for="node">PHP</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="node" name="knownTechnologies" value="Gulp">
+                  <label class="chk" for="node">Gulp</label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <input class="ctr" type="text" id="github" name="githubUrl" placeholder="GitHub URL">
+            </li>
+            <li>
+              <input class="ctr" type="text" id="twitter" name="twitterUrl" placeholder="Twitter URL">
+            </li>
+            <li>
+              <input type="text" id="books" name="favoriteBooks" placeholder="Favorite books (separate by comma)">
+            </li>
+            <!-- <li>
+              <input type="text" id="artists" name="artists" placeholder="Favorite artists (separate by comma)">
+            </li> -->
+            <li>
+              <button class="createcard" type="submit" form="cardform">
+                Create DevCard Page!
+              </button>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

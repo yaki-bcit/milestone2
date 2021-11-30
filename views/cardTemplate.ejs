@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    <%= fullName %>'s DevCard
+  </title>
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/luxonauta/luxa@1.1/dist/expanded/luxa.css" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+  <main class="has-dflex-center">
+    <section>
+      <div class="lx-container-85">
+        <div class="lx-row align-stretch">
+          <div class="lx-column is-3">
+            <div class="lx-row">
+              <div class="lx-card">
+                <div class="lx-row">
+                  <div class="has-dflex-center bs-md pic">
+                    <img src="https://github.com/luxonauta.png" alt="<%= fullName %>" />
+                  </div>
+                  <div class="infos">
+                    <span>
+                      <i class="fas fa-user-circle"></i>&nbsp;&nbsp;<%= fullName %>
+                    </span>
+                    <% if (role) { %>
+                    <span>
+                      <i class="fas fa-briefcase"></i>&nbsp;&nbsp;Full Stack Developer
+                    </span>
+                    <% } %>
+                    <% if (location) { %>
+                    <span>
+                      <i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;Vancouver, Canada
+                    </span>
+                    <% } %>
+                  </div>
+                </div>
+              </div>
+              <% if (myPictures) { %>
+              <div class="lx-card">
+                <h1 class="title">My Picture Gallery URL:</h1>
+                <div class="text">
+                  <span>http://localhost:8007/54az3/photos</span>
+                </div>
+              </div>
+              <% } %>
+              <% if (githubUrl || twitterUrl) { %>
+              <div class="lx-card">
+                <div class="lx-row">
+                  <h1 class="title">Connect with <%= fullName %></h1>
+                  <div class="mini-cards">
+                    <% if (githubUrl) { %>
+                    <a class="has-dflex-center bs-md" href="<%= githubUrl %>"
+                      target="_blank" rel="noopener noreferrer">
+                      <i class="fab fa-github-alt"></i>
+                    </a>
+                    <% } %>
+                    <% if (twitterUrl) { %>
+                    <a class="has-dflex-center bs-md" href="<%= twitterUrl %>" 
+                      target="_blank" rel="noopener noreferrer">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <% } %>
+                  </div>
+                </div>
+              </div>
+              <% } %>
+            </div>
+          </div>
+          <div class="lx-column">
+            <div class="lx-row">
+              <div class="lx-row lx-card">
+                <h1 class="title">
+                  <i class="fas fa-info-circle"></i>&nbsp;Welcome to <%= fullName %>'s corner of the Internet
+                </h1>
+              </div>
+              <% if (aboutMe) { %>
+              <div class="lx-row lx-card">
+                <h1 class="title">
+                  <i class="fas fa-hand-point-right"></i>&nbsp;About me
+                </h1>
+                <div class="text">
+                  <p>
+                    <%= aboutMe %>
+                  </p>
+                  <p>
+                    I&nbsp;&nbsp;<i class="fas fa-heart"></i>&nbsp; to code
+                    full-stack projects, always looking for innovative ways to
+                    write code that follows practices!
+                  </p>
+                </div>
+              </div>
+              <% } %>
+              <% if (knownTechnologies) { %>
+              <div class="lx-row lx-card">
+                <h1 class="title">
+                  <i class="fas fa-terminal"></i>&nbsp;Technologies
+                </h1>
+                <div class="mini-cards">
+                  <% knownTechnologies.forEach(item => { %>
+                    <span class="has-dflex-center bs-md" title="<%= item %>">
+                      <% if (item === 'HTML') { %>
+                        <i class="fab fa-html5"></i>
+                      <% } else if (item === 'CSS') { %>
+                        <i class="fab fa-css3-alt"></i>
+                      <% } else if (item === 'Git') { %>
+                        <i class="fab fa-git-alt"></i>
+                      <% } else if (item === 'Node.js') { %>
+                        <i class="fab fa-node-js"></i>
+                      <% } else if (item === 'JS') { %>
+                        <i class="fab fa-js"></i>
+                      <% } else if (item === 'React') { %>
+                        <i class="fab fa-react"></i>
+                      <% } else if (item === 'Sass') { %>
+                        <i class="fab fa-sass"></i>
+                      <% } else if (item === 'Gulp') { %>
+                        <i class="fab fa-gulp"></i>
+                      <% } else if (item === 'NPM') { %>
+                        <i class="fab fa-npm"></i>
+                      <% } else if (item === 'PHP') { %>
+                        <i class="fab fa-php"></i>
+                      <% } %>
+                    </span>
+                  <% }) %>
+                </div>
+              </div>
+              <% } %>
+              <% if (favoriteBooks) { %>
+                <div class="lx-row lx-card">
+                  <h1 class="title">
+                    <i class="fas fa-book"></i>&nbsp;My favorite books
+                  </h1>
+                  <div class="text">
+                    <ol>
+                      <% for (let i=0; i < favoriteBooks.length; i++) { %>
+                        <li>
+                          <p>
+                            <%= favoriteBooks[i] %>
+                          </p>
+                        </li>
+                        <% } %>
+                    </ol>
+                  </div>
+                </div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+</body>
+</html>
